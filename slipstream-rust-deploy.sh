@@ -1977,11 +1977,6 @@ detect_dnstt() {
         detection_reasons+=("dnstt-server systemd service found")
     fi
 
-    # Check for dnstt user
-    if id "dnstt" &>/dev/null; then
-        dnstt_detected=true
-        detection_reasons+=("dnstt user found")
-    fi
 
     # Check for dnstt config directory
     if [ -d "/etc/dnstt" ]; then
