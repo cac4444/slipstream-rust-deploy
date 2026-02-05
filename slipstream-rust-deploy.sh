@@ -1528,14 +1528,14 @@ setup_dante() {
     print_status "Setting up Dante SOCKS proxy..."
 
     # Install Dante
-    case $PKG_MANAGER in
-        dnf|yum)
-            $PKG_MANAGER install -y dante-server
-            ;;
-        apt)
-            apt install -y dante-server
-            ;;
-    esac
+#    case $PKG_MANAGER in
+#        dnf|yum)
+#            $PKG_MANAGER install -y dante-server
+#            ;;
+#        apt)
+#            apt install -y dante-server
+#            ;;
+#    esac
 
     # Get the primary network interface for external interface
     local external_interface
