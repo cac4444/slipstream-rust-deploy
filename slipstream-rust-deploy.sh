@@ -1164,7 +1164,7 @@ install_slipstream_server() {
 create_slipstream_user() {
     print_status "Creating slipstream user..."
 
-    if ! id "$SLIPSTREAM_USER" &>/dev/null; then
+    if ! grep -q "^$SLIPSTREAM_USER:" /etc/passwd; then
         useradd -r -s /bin/false -d /nonexistent -c "slipstream service user" "$SLIPSTREAM_USER"
         print_status "Created user: $SLIPSTREAM_USER"
     else
